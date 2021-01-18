@@ -2,9 +2,9 @@
 a little js game of clicking random animated letters
 
 
-#To Start
+# To Start
 Just open index.html file.
 
-#Libraries used
+# Libraries used
 -Jquery
 -Jquery-collision
