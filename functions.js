@@ -14,7 +14,7 @@ const expectedClickOrder = ["p", "o", "s", "a", "o"];
 let clickOrder = [];
 
 // function that calculates the new value for top/left properties of the div that contain letter
-const makeNewPosition = () => {
+const calculateNewPosition = () => {
   // container height and width
   const containerHeight = $("#container").height();
   const containerWidth = $("#container").width();
@@ -33,11 +33,14 @@ const makeNewPosition = () => {
   return [newLetterHeightPosition, newLetterWidthPosition];
 };
 // function that detects if the 2 letters gonna colide. If so the current animation is stopped, and new one is created(with new random values)(using jquery-collision)
-// params: id- id of the div that contain letter
+/**
+ *
+ * @param {string} id -id of the div that contain letter
+ */
 const collisionDetection = (id) => {
-  let colliders_selector = id;
-  let obstacles_selector = ".letter-div";
-  let hits = $(colliders_selector).collision(obstacles_selector);
+  let collidersSelector = id;
+  let obstaclesSelector = ".letter-div";
+  let hits = $(collidersSelector).collision(obstaclesSelector);
   // hits represents the array of colided elements, if its more than 1, that means 2 elements are in collision.
   if (hits.length > 1) {
     // stopping the current animation, and creating the new one for the same element
@@ -46,8 +49,12 @@ const collisionDetection = (id) => {
   }
 };
 // function for animating div that contain letter
+/**
+ *
+ * @param {string} id -id of the div that contain letter
+ */
 const animateDiv = (id) => {
-  let newPosition = makeNewPosition();
+  let newPosition = calculateNewPosition();
   // setting up new values for top and left value of the div
   $(id).animate(
     { top: newPosition[0], left: newPosition[1] },
@@ -58,7 +65,11 @@ const animateDiv = (id) => {
   );
 };
 // function that is called whenever the div that contain letter is clicked
-// params: letter: the value of letter that is clicked, id: the id of the two 'o' letters, so we can make them distinct.
+/**
+ *
+ * @param {string} letter - the value of letter that is clicked
+ * @param {string} id -the id of the two 'o' letters, so we can make them distinct.
+ */
 const clickedLetter = (letter, id) => {
   clickOrder.push(letter);
   // checking if the letters are in correct order
@@ -96,8 +107,11 @@ const setTimer = () => {
   }, timer);
 };
 // timeout function that is calling a collisionDetection function(every 650ms)
-// params id: id of the div that contain letter
 let checkCollisionTimeout;
+/**
+ *
+ * @param {string} id -id of the div that contain letter
+ */
 const checkCollision = (id) => {
   checkCollisionTimeout = setTimeout(() => {
     collisionDetection(id);
