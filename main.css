@@ -1,0 +1,89 @@
+html body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.letter-div {
+  width: 5%;
+  min-width: 45px;
+  margin: 0 45px;
+  height: 10%;
+  min-height: 45px;
+  text-align: center;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: top 2s ease-out;
+  -webkit-transition: left 2s ease-out;
+  transition: top 2s ease-out;
+  transition: left 2s ease-out;
+}
+.letter-div:hover {
+  border-radius: 30%;
+  box-shadow: 3px 2px 20px 4px #42bccf;
+}
+.success-message-div {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.hide-success-message-div {
+  display: none;
+}
+.success-message-p {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+.hide-letter {
+  visibility: hidden;
+}
+
+.button {
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: #007bff;
+  border: 1px solid transparent;
+  border-color: #007bff;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+@media only screen and (max-width: 768px) {
+  .letter-div {
+    font-size: 2rem !important;
+    margin: 0;
+  }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="jquery-collision.min.js"></script>
+    <title>Fast fingers</title>
+  </head>
+  <body>
+    <div class="container-div" id="container">
+      <div class="letter-div" id="p" onclick='clickedLetter("p")'>P</div>
+      <div class="letter-div" id="o1" onclick='clickedLetter("o", "1")'>O</div>
+      <div class="letter-div" id="s" onclick='clickedLetter("s")'>S</div>
+      <div class="letter-div" id="a" onclick='clickedLetter("a")'>A</div>
+      <div class="letter-div" id="o2" onclick='clickedLetter("o", "2")'>O</div>
+      <div
+        class="success-message-div hide-success-message-div"
+        id="success-message"
+      >
+        <p class="success-message-p">BRAVO, USPESNO STE ZAVRSILI IGRU</p>
+        <button onclick="newGame()" class="button">NOVA IGRA</button>
+      </div>
+    </div>
+    <script type="text/javascript" src="functions.js"></script>
+  </body>
+</html>
